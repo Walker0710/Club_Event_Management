@@ -89,7 +89,7 @@ app.post("/api/addevent", async (req, res) => {
 // Delete a post
 app.get("/api/events/delete/:id", async (req, res) => {
   try {
-    await axios.delete(`${API_URL}/posts/${req.params.id}`);
+    await axios.delete(`${API_URL}/events/${req.params.id}`);
     res.redirect("/events");
   } catch (error) {
     res.status(500).json({ message: "Error deleting post" });

@@ -12,8 +12,28 @@
 </head>
 
 <body>
-    <!-- header -->
     <div class="container-fluid">
+        <header class="d-flex flex-wrap justify-content-center py-3 ">
+            <a href="/"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+                <span class="fs-4">Simple header</span>
+            </a>
+
+            <ul class="nav nav-pills">
+                <li><a href="/" class="nav-link px-2">Home</a></li>
+                <li><a href="#" class="nav-link px-2">Features</a></li>
+                <li><a href="/events" class="nav-link px-2">Events</a></li>
+                <li><a href="#" class="nav-link px-2">Notifiation</a></li>
+                <li><a href="#" class="nav-link px-2">About</a></li>
+            </ul>
+        </header>
+    </div>
+
+    <!-- header -->
+    <!-- <div class="container-fluid">
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
             <div class="col-md-3 mb-2 mb-md-0">
                 <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
@@ -30,65 +50,104 @@
                 <li><a href="/events" class="nav-link px-2">Events</a></li>
                 <li><a href="#" class="nav-link px-2">About</a></li>
             </ul>
-<!-- 
-            <div class="col-md-3 text-end">
-                <a href="./addevent"> <button type="button" class="btn btn-outline-primary me-2">Add Event</button></a>
-                <a href="./notify"> <button type="button" class="btn btn-outline-primary me-2">Send Notifiation</button></a>
-            </div> -->
         </header>
-    </div>
+    </div> -->
 
     <div class="cover">
         <div class="cover-heading">
-            <h1 class="cover-title">IIT Hyderabad Event Tracker</h1>
+            <h1 class="cover-title">EventRadar - IIT Hyderabad</h1>
         </div>
-
     </div>
 
-    <!-- <div class="container Upcoming-events">
+    <div class="upcoming-events">
         <h1 class="heading">Upcoming Events</h1>
-
-        <div class="cards">
-
-            <div class="card1 allcard">
-                <div class="event-name">
-                    <h2>E-Summit</h2>
-                    <div class="detail">
-                        old mess lawn </br> 5:00 - 7:00 </br> 1 jan
-                    </div>
-                </div>
-            </div>
-
-            <div class="card2 allcard">
-                <div class="event-name">
-                    <h2>TedX</h2>
-                    <div class="detail">
-                        old mess lawn </br> 5:00 - 7:00 </br> 4 jan
-                    </div>
-                </div>
-            </div>
-
-            <div class="card3 allcard">
-                <div class="event-name ">
-                    <h2>Milan</h2>
-                    <div class="detail">
-                        old mess lawn </br> 5:00 - 7:00 </br> 6 jan
-                    </div>
-                </div>
-            </div>
-
+        <div class="card-container">
+            <div class="cards card1">Milan</div>
+            <div class="cards card2">Elan & vision</div>
+            <div class="cards card3">E-Summit</div>
         </div>
-
     </div>
 
+    <div class="Updates">
+        <h1 class="heading">Updates</h1>
+        <div class="update-content">2 Jan 2024 ------------------------ Theme revele of Elan & Vision</div>
+        <div class="update-content">4 Jan 2024 ------------------------ Opening ceramony of Milan</div>
+        <div class="update-content">5 Jan 2024 ------------------------ Cricket match of Charakha Vs Kalam</div>
+        <div class="update-content">5 Jan 2024 ------------------------ Sugar Rocketery</div>
+        <div class="update-content">5 Jan 2024 ------------------------ Tresure hunt</div>
+    </div>
+
+
+    <div class="aftermovie">
+        <h1 class="heading">Aftermovie</h1>
+        <a href="https://www.youtube.com/watch?v=YYgBsC1Ee10&t=38s">
+            <img class="thumbnilimg" src="../images/thumbnil.png"></a>
+    </div>
+<div class="container-fluid footerBack">
     <div class="container">
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5">
+            <div class="col mb-3">
+                <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+                <p class="text-body-secondary">© 2024</p>
+            </div>
 
-        <h1 class="heading">Recent Notifiation</h1>
+            <div class="col mb-3">
 
+            </div>
 
-    </div> -->
+            <div class="col mb-3">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-primary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-primary">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-primary">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-primary">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-primary">About</a></li>
+                </ul>
+            </div>
 
+            <div class="col mb-3">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-primary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-primary">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-primary">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-primary">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-primary">About</a></li>
+                </ul>
+            </div>
 
+            <div class="col mb-3">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-primary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-primary">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-primary">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-primary">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-primary">About</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <div class="container-fluid">
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p copyr>© 2024 Milan, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><img class="insta" src="../images/insta.png" /></a>
+            </li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><img class="x" src="../images/x.png" /></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><img class="fb" src="../images/facebook.png" /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+</div>
 
 </body>
 
