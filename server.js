@@ -61,9 +61,9 @@ app.get("/addevent", async (req, res) => {
 // });
 
 // // add a event
-app.post("/api/events", async (req, res) => {
+app.post("/api/addevent", async (req, res) => {
   try {
-    const response = await axios.post(`${API_URL}/events`, req.body);
+    const response = await axios.post(`${API_URL}/addevent`, req.body);
     console.log(response.data);
     res.redirect("/events");
   } catch (error) {
