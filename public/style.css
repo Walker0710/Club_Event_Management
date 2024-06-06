@@ -1,0 +1,71 @@
+/* .cover {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 885px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    padding: 250px 125px;
+    background-image: url(../images/cover.jpg);
+} */
+
+body {
+    /* background-color: black; */
+    /* background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center; */
+}
+
+
+.cover {
+    background-image: url(../images/cover.jpg);
+    width: 100%;
+    height: 894px;
+    background-repeat: no-repeat;
+    background-size: cover;  
+    background-position: center;
+    display: flex;
+    position: relative;
+}
+
+
+.cover-heading {
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+
+.cover-title {
+    color: #d3d3d3;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+    background-position: center;
+}
+
+.allcard {
+    background-color: #d3d3d3;
+    text-align: center;
+    width: 300px;
+    height: 190px;
+}
+
+.heading {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+    color: #d3d3d3;
+}
+
+.card3 {
+    background-image: url(../images/milan.jpg);
+}
