@@ -1,12 +1,24 @@
 import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
+import pg from "pg";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 
 const app = express();
 const port = 5000;
 const API_URL = "http://localhost:4000";
+
+const db = new pg.Client({
+  user: "Milan_owner",
+  host: "ep-polished-smoke-a12sfj0v.ap-southeast-1.aws.neon.tech", 
+  database: "EventRadar",
+  password: "yXv7R6fGMABz",
+  port: 5432,
+  ssl: "true",
+});
+
+db.connect();
 
 app.use(express.static("public"));
 
@@ -21,12 +33,81 @@ app.get("/public/style.css", (req, res) => {
 app.use('/images', express.static(__dirname + '/images'));
 
 
-//Events
 
-// Route to render the main page
+// Route to render the login register page
 app.get("/", (req, res) => {
-    res.render("home.ejs");
+    res.render("firstPage.ejs");
 });
+
+// Route to render the home page
+app.get("/home", (req, res) => {
+  res.render("home.ejs");
+});
+
+// Route to render the register page
+app.get("/register", (req, res) => {
+  res.render("register.ejs");
+});
+
+// Route to render the login page
+app.get("/login", (req, res) => {
+  res.render("login.ejs");
+});
+
+
+// Route to post the register data
+app.post("/register", async (req, res) => {
+  const {name, email, password} = req.body;
+
+  try {
+    const checkResult = await db.query("SELECT * FROM users WHERE email = $1", [
+      email,
+    ]);
+
+    if (checkResult.rows.length > 0) {
+      res.redirect("/login");
+    } else {
+      const result = await db.query(
+        "INSERT INTO users (name, email, password) VALUES ($1, $2, $3)",
+        [name, email, password]
+      );
+      console.log(result);
+      res.redirect("/home");
+    }
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+// Route to check the register page
+app.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const result = await db.query("SELECT * FROM users WHERE email = $1", [
+      email,
+    ]);
+    if (result.rows.length > 0) {
+      const user = result.rows[0];
+      const storedPassword = user.password;
+
+      if (password === storedPassword) {
+        // res.sendFile(__dirname + "/views/home.html");
+        res.redirect("/home")
+      } else {
+        res.send("Incorrect Password");
+      }
+    } else {
+      res.redirect("/register");
+    }
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+
+
+//Events
 
 // Route to render the events page
 app.get("/events", async (req, res) => {
