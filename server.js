@@ -20,6 +20,9 @@ app.get("/public/style.css", (req, res) => {
   
 app.use('/images', express.static(__dirname + '/images'));
 
+
+//Events
+
 // Route to render the main page
 app.get("/", (req, res) => {
     res.render("home.ejs");
@@ -60,7 +63,7 @@ app.get("/addevent", async (req, res) => {
 //   }
 // });
 
-// // add a event
+// add a event
 app.post("/api/addevent", async (req, res) => {
   try {
     const response = await axios.post(`${API_URL}/addevent`, req.body);
@@ -93,6 +96,37 @@ app.get("/api/events/delete/:id", async (req, res) => {
     res.redirect("/events");
   } catch (error) {
     res.status(500).json({ message: "Error deleting post" });
+  }
+});
+
+
+//Notification
+// Route to render the notifications page
+app.get("/notifications", async (req, res) => {
+  try {
+    const response = await axios.get(`${API_URL}/notifications`);
+    console.log(response);
+    res.render("notifications.ejs", {notifications : response.data });
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching posts" });
+  }
+});
+
+
+// Route to render the send notification page
+app.get("/sendnotification", async (req, res) => {
+  res.render("sendnotification.ejs");
+});
+
+
+// add the notification
+app.post("/api/sendnotification", async (req, res) => {
+  try {
+    const response = await axios.post(`${API_URL}/sendnotification`, req.body);
+    console.log(response.data);
+    res.redirect("/notifications");
+  } catch (error) {
+    res.status(500).json({ message: "Error creating post" });
   }
 });
 
