@@ -72,15 +72,15 @@ body {
 }
 
 .card1 {
-  background-image: url(../images/milan.jpg);
+  background-image: url(../images/milan2.jpg);
 }
 
 .card2 {
-  background-image: url(../images/elan.jpg);
+  background-image: url(../images/elan3.jpg);
 }
 
 .card3 {
-  background-image: url(../images/ecell.jpg);
+  background-image: url(../images/ted1.jpg);
 }
 
 .card-container {
@@ -109,7 +109,7 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #abb67d;
+  color: #BD9F67;
 }
 
 /* .cards {
@@ -156,4 +156,18 @@ body {
   margin-left: 10px;
   width: 250px;
   height: 50px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #d3d3d3;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: red;
+  border-radius: 10px;
 }
