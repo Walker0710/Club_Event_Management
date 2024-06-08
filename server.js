@@ -54,6 +54,13 @@ app.get("/login", (req, res) => {
   res.render("login.ejs");
 });
 
+app.get("/logintoaddevent", (req, res) => {
+  res.render("loginToAddEvent.ejs");
+});
+
+app.get("/logintoaddnoti", (req, res) => {
+  res.render("loginToAddNoti.ejs");
+});
 
 // Route to post the register data
 app.post("/register", async (req, res) => {
@@ -105,7 +112,53 @@ app.post("/login", async (req, res) => {
   }
 });
 
+app.post("/logintoaddevent", async (req, res) => {
+  const { email, password } = req.body;
 
+  try {
+    const result = await db.query("SELECT * FROM admins WHERE email = $1", [
+      email,
+    ]);
+
+    const user = result.rows[0];
+    const storedPassword = user.password;
+
+    if (password === storedPassword) {
+        // res.sendFile(__dirname + "/views/home.html");
+        res.redirect("/addevent")
+      } else {
+        res.send("Incorrect Password");
+      }
+  }
+   
+  catch (err) {
+    console.log(err);
+  }
+});
+
+app.post("/logintoaddnoti", async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const result = await db.query("SELECT * FROM admins WHERE email = $1", [
+      email,
+    ]);
+
+    const user = result.rows[0];
+    const storedPassword = user.password;
+
+    if (password === storedPassword) {
+        // res.sendFile(__dirname + "/views/home.html");
+        res.redirect("/sendnotification")
+      } else {
+        res.send("Incorrect Password");
+      }
+  }
+   
+  catch (err) {
+    console.log(err);
+  }
+});
 
 //Events
 
