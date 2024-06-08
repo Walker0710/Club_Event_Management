@@ -16,14 +16,14 @@ let events = [
   },
   {
     id: 2,
-    name: "E-Submmit",
+    name: "E-Summit",
     venue:
       "Auditoriam",
     time: "2 Jan", 
   },
   {
     id: 3,
-    name: "Ted",
+    name: "TedX",
     venue:
       "RCC",
     time: "3 Jan", 
