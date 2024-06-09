@@ -42,14 +42,6 @@ app.get("/events", (req, res) => {
   res.json(events);
 });
 
-//GET a specific post by id
-// app.get("/posts/:id", (req, res) => {
-//   const id = parseInt(req.params.id);
-//   const foundPost = posts.find((joke) => joke.id === id);
-//   if (!foundPost) return res.status(404).json({ message: "Post not found" });
-//   res.json(foundPost);
-// });
-
 //POST a new event
 app.post("/addevent", (req, res) => {
   const newId = lastEventId += 1;
@@ -64,28 +56,15 @@ app.post("/addevent", (req, res) => {
   res.status(201).json(event);
 });
 
-//PATCH a post when you just want to update one parameter
-// app.patch("/posts/:id", (req, res) => {
-//   const post = posts.find((p) => p.id === parseInt(req.params.id));
-//   if (!post) return res.status(404).json({ message: "Post not found" });
-
-//   if (req.body.title) post.title = req.body.title;
-//   if (req.body.content) post.content = req.body.content;
-//   if (req.body.author) post.author = req.body.author;
-
-//   res.json(post);
-// });
 
 //DELETE a specific event by providing the post id.
-app.delete("/posts/:id", (req, res) => {
-  const index = events.findIndex((p) => p.id === parseInt(req.params.id));
+app.delete("/deleteevent", (req, res) => {
+  const index = events.findIndex((p) => p.id === parseInt(req.body.id));
   if (index === -1) return res.status(404).json({ message: "event not found" });
 
-  posts.splice(index, 1);
+  events.splice(index, 1);
   res.json({ message: "event deleted" });
 });
-
-
 
 
 //Notification API
@@ -129,11 +108,11 @@ app.post("/sendnotification", (req, res) => {
   res.status(201).json(noti);
 });
 
-app.delete("/posts/:id", (req, res) => {
-  const index = events.findIndex((p) => p.id === parseInt(req.params.id));
+app.delete("/deletenotification", (req, res) => {
+  const index = notifications.findIndex((p) => p.id === parseInt(req.params.id));
   if (index === -1) return res.status(404).json({ message: "event not found" });
 
-  posts.splice(index, 1);
+  notifications.splice(index, 1);
   res.json({ message: "event deleted" });
 });
 
