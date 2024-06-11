@@ -33,7 +33,6 @@ app.get("/public/style.css", (req, res) => {
 app.use('/images', express.static(__dirname + '/images'));
 
 
-
 // Route to render the login register page
 app.get("/", (req, res) => {
   res.render("firstPage.ejs");
@@ -197,15 +196,16 @@ app.get("/deleteevent", (req, res) => {
   res.render("deleteEvent.ejs");
 });
 
-app.get("/api/deleteevent", async (req, res) => {
+
+app.post("/api/deleteevent", async (req, res) => {
   try {
-    await axios.delete(`${API_URL}/deleteevent`);
+    const id = req.body.id;
+    await axios.delete(`${API_URL}/deleteevent`, { data: { id } });
     res.redirect("/events");
   } catch (error) {
-    res.status(500).json({ message: " yoo Error deleting post" });
+    res.status(500).json({ message: "Error deleting event" });
   }
 });
-
 
 
 //   Notification
@@ -296,17 +296,16 @@ app.get("/deletenotification", (req, res) => {
   res.render("deleteNotification.ejs");
 });
 
-app.get("/api/deletenotification", async (req, res) => {
+
+app.post("/api/deletenotification", async (req, res) => {
   try {
-    await axios.delete(`${API_URL}/deletenotification`);
+    const id = req.body.id;
+    await axios.delete(`${API_URL}/deletenotification`, { data: { id } });
     res.redirect("/notifications");
   } catch (error) {
     res.status(500).json({ message: "Error deleting post" });
   }
 });
-
-
-
 
 
 app.listen(port, () => {

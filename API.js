@@ -56,14 +56,13 @@ app.post("/addevent", (req, res) => {
   res.status(201).json(event);
 });
 
-
-//DELETE a specific event by providing the post id.
 app.delete("/deleteevent", (req, res) => {
-  const index = events.findIndex((p) => p.id === parseInt(req.body.id));
-  if (index === -1) return res.status(404).json({ message: "event not found" });
+  const id = parseInt(req.body.id);
+  const index = events.findIndex((p) => p.id === id);
+  if (index === -1) return res.status(404).json({ message: "Event not found" });
 
   events.splice(index, 1);
-  res.json({ message: "event deleted" });
+  res.json({ message: "Event deleted" });
 });
 
 
@@ -108,8 +107,10 @@ app.post("/sendnotification", (req, res) => {
   res.status(201).json(noti);
 });
 
+
 app.delete("/deletenotification", (req, res) => {
-  const index = notifications.findIndex((p) => p.id === parseInt(req.params.id));
+  const id = parseInt(req.body.id);
+  const index = notifications.findIndex((p) => p.id === id);
   if (index === -1) return res.status(404).json({ message: "event not found" });
 
   notifications.splice(index, 1);
@@ -117,7 +118,12 @@ app.delete("/deletenotification", (req, res) => {
 });
 
 
-
 app.listen(port, () => {
   console.log(`API is running at http://localhost:${port}`);
 });
+
+
+
+
+
+
