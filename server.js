@@ -300,9 +300,11 @@ app.get("/deletenotification", (req, res) => {
 app.post("/api/deletenotification", async (req, res) => {
   try {
     const id = req.body.id;
+    console.log("id is hkjhafsdkjhaskjhasfkjhjkasfhjkfashkj", id);
     await axios.delete(`${API_URL}/deletenotification`, { data: { id } });
     res.redirect("/notifications");
   } catch (error) {
+    console.log("error is ", error);
     res.status(500).json({ message: "Error deleting post" });
   }
 });
