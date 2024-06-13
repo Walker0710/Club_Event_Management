@@ -9,28 +9,42 @@ const port = 4000;
 let events = [
   {
     id: 1,
-    name: "Milan",
+    name: "Battle Of Bands",
     venue:
-      "OAT",
-    time: "1 Jan", 
+      "Old Mess Lawn",
+    time: "9:00 - 12:00 AM, 15 Feb", 
   },
   {
     id: 2,
-    name: "E-Summit",
+    name: "Group Dance",
     venue:
       "Auditoriam",
-    time: "2 Jan", 
+    time: "1:00 - 3:00 PM, 15 Feb", 
   },
   {
     id: 3,
-    name: "TedX",
+    name: "Prom Night",
     venue:
-      "RCC",
-    time: "3 Jan", 
+      "Old Mess Lawn",
+    time: "8:00 - 11:00 PM, 15 Feb", 
+  },
+  {
+    id: 4,
+    name: "Sugar Rocketry",
+    venue:
+      "Football Ground",
+    time: "9:00 - 11:00 AM, 16 Feb", 
+  },
+  {
+    id: 5,
+    name: "Freestyle",
+    venue:
+      "Auditorium",
+    time: "12:00 - 2:00 PM, 16 Feb", 
   },
 ];
 
-let lastEventId = 3;
+let lastEventId = 5;
 
 // Middleware
 app.use(bodyParser.json());
@@ -71,22 +85,27 @@ app.delete("/deleteevent", (req, res) => {
 let notifications = [
   {
     id: 1,
-    content: "Elan theme revele at 2 jan",
-    sendTime: "10 am 1 jan 2024", 
+    content: "Battle Of Bands is starting in 5 min",
+    sendTime: "8:55 AM 15 Feb 2024", 
   },
   {
-    id: 1,
-    content: "Opening ceramony of Milan at 4 Jan 2024",
-    sendTime: "2 am 3 jan 2024", 
+    id: 2,
+    content: "Group Dance will start at 1:30 PM",
+    sendTime: "10:56 AM 15 Feb 2024", 
   },
   {
-    id: 1,
-    content: "Cricket match of Charakha Vs Kalam at 5 Jan 2024",
-    sendTime: "2 am 3 jan 2024", 
+    id: 3,
+    content: "Hurry up guys prom night is starting in 10 min",
+    sendTime: "8:07 PM 15 Feb 2024", 
+  },
+  {
+    id: 4,
+    content: "Venue for freestyle is changed to hostel circle",
+    sendTime: "11:02 PM 15 Feb 2024", 
   },
 ];
 
-let lastNotifyId = 3;
+let lastNotifyId = 4;
 
 //GET All events
 app.get("/notifications", (req, res) => {

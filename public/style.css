@@ -11,7 +11,7 @@ body {
 
 
 .cover {
-  background-image: url(../images/cover.jpg);
+  /* background-image: url(../images/cover.jpg); */
   width: 100%;
   height: 920px;
   background-repeat: no-repeat;
@@ -70,15 +70,25 @@ h2 {
   height: 40px;
 }
 
+/* .forback {
+  width: 100%;
+  height: 100%;
+  background: rgba(29, 31, 32, 0.904)
+    radial-gradient(rgba(255, 255, 255, 0.712) 10%, transparent 1%);
+
+  background-size: 11px 11px;
+} */
+
 .heading {
-  margin-top: 150px;
-  margin-bottom: 150px;
+  margin-top: 250px;
+  margin-bottom: 100px;
   color: #d3d3d3;
   text-align: center;
+  font-size: 50px;
 }
 
 .card1 {
-  background-image: url(../images/grid6.jpg);
+  background-image: url(../images/milan.jpg);
 }
 
 .card2 {
@@ -160,6 +170,11 @@ hr {
   background-color: gray;
 }
 
+.footerLogo {
+  width: 250px;
+  margin-top: 90px;
+}
+
 .logo {
   margin-left: 10px;
   width: 250px;
@@ -183,3 +198,32 @@ hr {
 .content {
   color: gray;
 }
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 200px;
+}
+
+.img4 {
+  width: 910px;
+  height: 300px;
+  grid-column: span 2;
+}
+
+.img5 {
+  width: 450px;
+  height: 300px;
+}
+
+.spanrow {
+  width: 450px;
+  height: 610px;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
