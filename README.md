@@ -1,4 +1,4 @@
-To start, first node server.js on one terminal and node API.js on another terminal then on google type localhost:5000.
+To start, first npm i then node server.js on one terminal and node API.js on another terminal then on google type localhost:5000.
 
 admin account -> email = admin@iith.ac.in password = 12345;
 
