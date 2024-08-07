@@ -13,7 +13,7 @@ const db = new pg.Client({
   user: "Milan_owner",
   host: "ep-polished-smoke-a12sfj0v.ap-southeast-1.aws.neon.tech",
   database: "EventRadar",
-  password: "yXv7R6fGMABz",
+  password: "",
   port: 5432,
   ssl: "true",
 });
